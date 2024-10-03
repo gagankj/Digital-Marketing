@@ -25,23 +25,23 @@ const router = createHashRouter([
     element: <App />,
     children: [
       {
-        path: '/',
+        path: '',
         element: <Home />,
       },
       {
-        path:'/about',
+        path:'about',
         element:<About/>
       },
       {
-        path:'/services',
+        path:'services',
         element:<Services/>
       },
       {
-        path:'/contact',
+        path:'contact',
         element:<Contact/>
       },
       {
-        path:'/blog',
+        path:'blog',
         element:<Blog/>
       },
       {
@@ -49,27 +49,27 @@ const router = createHashRouter([
         element:<Notfound/>
       },
       {
-        path:'/social',
+        path:'social',
         element:<Social/>
       },
       {
-        path:'/seo',
+        path:'seo',
         element:<Seo/>
       },
       {
-        path:'/web',
+        path:'web',
         element:<Web/>
       },
       {
-        path:'/whatsapp',
+        path:'whatsapp',
         element:<Whatsapp/>
       },
       {
-        path:'/ppc',
+        path:'ppc',
         element:<Ppc/>
       },
       {
-        path:'/pricing',
+        path:'pricing',
         element:<Pricing/>
       },
       
