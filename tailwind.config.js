@@ -6,6 +6,15 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        spin: 'spin 20s linear infinite',
+      },
+      keyframes: {
+        spin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+      },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
     },
@@ -13,7 +22,8 @@ export default {
         'custom-image':"url('./src/assets/images/hero.png')",
         'services':"url(./src/assets/images/services.png)",
         'contact':"url('./src/assets/images/contact.png')",
-        'logo':"url('./src/assets/images/logo.jpg')"
+        'logo':"url('./src/assets/logo.png')",
+        'main':"url('./src/assets/main-bg.jpg')"
       }
   },
   plugins: [],

@@ -1,16 +1,65 @@
-import React from 'react';
+import {React,useState,useEffect} from 'react';
+
 
 const About = () => {
+
+  const [HeadingVisible,SetHeadingVisible]=useState(false)
+  const [MissionVisible,SetMissionVisible]=useState(false)
+  const [ValuesVisible,SetValuesVisible]=useState(false)
+  const [TeamVisible,SetTeamVisible]=useState(false)
+  const [ContactVisible,SetContactVisible]=useState(false)
+
+    useEffect(()=>{
+
+        
+        const headingTimer=setTimeout(()=>{
+            SetHeadingVisible(true)
+        },0)
+
+        const missionTimer=setTimeout(()=>{
+            SetMissionVisible(true)
+        },200)
+
+        const valuesTimer=setTimeout(()=>{
+            SetValuesVisible(true)
+        },400)
+
+        const teamTimer=setTimeout(()=>{
+            SetTeamVisible(true)
+        },600)
+
+        const contactTimer=setTimeout(()=>{
+            SetContactVisible(true)
+        },800)
+        
+        
+
+
+
+        return()=>{
+            clearTimeout(headingTimer)
+            clearTimeout(missionTimer)
+            clearTimeout(valuesTimer)
+            clearTimeout(teamTimer)
+            clearTimeout(contactTimer)
+           
+        }
+            
+        
+    },[])
+
+
   return (
-    <div className="container custom-cursor mx-auto pt-20 px-4" style={{ backgroundColor: '#E9EFEC' }}>
+    <div className="container custom-cursor mx-auto pt-20" style={{ backgroundColor: '#E9EFEC' }}>
       {/* Hero Section */}
-      <section className="hero text-black py-20 text-center">
-        <h1 className="text-7xl font-bold">About Us</h1>
-        <p className="mt-4">Learn more about our mission, values, and the team behind our success.</p>
+      
+      <section className="hero rounded-xl bg-cover   bg-main h-56 text-white p-10 mt-10 text-center">
+        <h1 className={`text-7xl text-[#082522] transition-opacity duration-1000  font-bold ${HeadingVisible ? 'opacity-100' : 'opacity-0'}`}>About <span className={`text-orange-500 transition-opacity duration-1000   ${MissionVisible ? 'opacity-100' : 'opacity-0'}`}>Us</span> </h1>
+        <p className={`mt-4 text-zinc-500 transition-opacity duration-1000 text-xl ${MissionVisible ? 'opacity-100' : 'opacity-0'}`}>Learn more about our mission, values, and the team behind our success.</p>
       </section>
 
       {/* Mission Section */}
-      <section className="mission my-16">
+      <section className={`mission my-16 transition-opacity duration-1000 ${MissionVisible ? 'opacity-100' : 'opacity-0'}`}>
         <h2 className="text-4xl font-bold text-center">Our Mission</h2>
         <p className="mt-4 text-center">
           Our mission is to empower businesses through innovative marketing strategies that drive growth and success. We strive to create meaningful connections between brands and their audiences.
@@ -18,7 +67,7 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="values my-16">
+      <section className={`values my-16 transition-opacity duration-1000 ${ValuesVisible ? 'opacity-100' : 'opacity-0'}`}>
         <h2 className="text-4xl font-bold text-center">Our Values</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
           <div className="value bg-white p-6 rounded-lg shadow">
@@ -37,7 +86,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="team my-16">
+      <section className={`team my-16 transition-opacity duration-1000 ${TeamVisible ? 'opacity-100' : 'opacity-0'}`}>
         <h2 className="text-4xl font-bold text-center">Meet Our Team</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
           <div className="team-member bg-white p-6 rounded-lg shadow">
@@ -59,7 +108,7 @@ const About = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="contact my-16">
+          <section className={`contact my-16 transition-opacity duration-1000 ${ContactVisible ? 'opacity-100' : 'opacity-0'}`}>
         <h2 className="text-4xl font-bold text-center">Contact Us</h2>
         <p className="mt-4 text-center">We'd love to hear from you! Reach out to us for any inquiries.</p>
         <form className="mt-8 max-w-lg mx-auto">

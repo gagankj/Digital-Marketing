@@ -23,11 +23,11 @@ const Blog = () => {
   ];
 
   return (
-    <div className="container custom-cursor mx-auto px-4" style={{ backgroundColor: '#E9EFEC' }}>
+    <div className="container custom-cursor pt-20 mx-auto px-4" style={{ backgroundColor: '#E9EFEC' }}>
       {/* Hero Section */}
-      <section className="hero text-black py-20 text-center">
-        <h1 className="text-5xl font-bold">Our Blog</h1>
-        <p className="mt-4">Insights, tips, and trends in digital marketing.</p>
+      <section className="hero rounded-xl bg-cover  bg-main h-56 text-white p-10 mt-10 text-center">
+        <h1 className="text-7xl text-[#082522]  font-bold">Our <span className="text-orange-500">Blog</span> </h1>
+        <p className="mt-4 text-zinc-500 text-xl">Learn more about our mission, values, and the team behind our success.</p>
       </section>
 
       {/* Blog Posts Section */}

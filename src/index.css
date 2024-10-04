@@ -15,6 +15,10 @@
   }
 }
 
+body {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
 
 
 

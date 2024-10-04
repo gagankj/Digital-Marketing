@@ -2,7 +2,6 @@ import React from 'react';
 import {useEffect,useState} from 'react';
 import scroll from '../assets/images/scroll-bar.png'
 
-
 const Home = () => {
 
 
@@ -84,12 +83,12 @@ const Home = () => {
 
   
   return (
-    <div className=" px-4  custom-cursor h-full pt-10" style={{ backgroundColor: '#E9EFEC' }}>
+    <div className="   custom-cursor h-full pt-10" style={{ backgroundColor: '#E9EFEC' }}>
       {/* Hero Section */}
       
     <div className='flex h-auto justify-center'>
 
-      <section className={`hero pt-28 w-3/4 pl-10 bg-[#6da590]  text-black transition-opacity duration-1000 ${HeadingVisible ? 'opacity-100' : 'opacity-0'} rounded-xl mt-16 pb-44 bg-cover h-auto`}>
+      <section className={`hero w-full pt-28 w-3/4  pl-32 bg-main bg-cover bg-end  text-black transition-opacity duration-1000 ${HeadingVisible ? 'opacity-100' : 'opacity-0'} mt-16 pb-44 bg-cover h-auto`}>
       <h1 className={`text-9xl text-[#082522] transition-opacity duration-1000 font-bold ${TitleVisible ? 'opacity-100' : 'opacity-0'}`}>
         Boost your
       </h1>
@@ -107,9 +106,10 @@ const Home = () => {
       </button>
       
     </section>
-    <div className='w-96  mt-16 rounded-xl ml-4  bg-logo bg-cover bg-center bg-black text-white'>
+    
 
-    </div>
+
+    
     </div>
 
     <div className='flex justify-center' onClick={scrollNext}  >

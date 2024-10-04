@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 
 const Pricing = () => {
     const [HeadingVisible,SetHeadingVisible]=useState(false)
+    const [StarterVisible,SetStarterVisible]=useState(false)
     const [PricingVisible,SetPricingVisible]=useState(false)
 
     useEffect(()=>{
@@ -10,6 +11,12 @@ const Pricing = () => {
         const headingTimer=setTimeout(()=>{
             SetHeadingVisible(true)
         },0)
+
+        const starterTimer=setTimeout(()=>{
+            SetStarterVisible(true)
+        },100)
+
+        
         
         const pricingTimer=setTimeout(()=>{
             SetPricingVisible(true)
@@ -20,6 +27,7 @@ const Pricing = () => {
         return()=>{
             clearTimeout(headingTimer)
             clearTimeout(pricingTimer)
+            clearTimeout(starterTimer)
         }
             
         
@@ -34,9 +42,12 @@ const Pricing = () => {
     };
 
     return (
-        <div className="flex flex-col pt-32 items-center p-8">
-            <h1 className={`text-7xl transition-opacity duration-1000  font-bold mb-4 ${HeadingVisible ? 'opacity-100' : 'opacity-0'}`}>Our Plans</h1>
+        <div className="flex flex-col container mx-auto pt-20 items-center ">
+            <div className='rounded-xl bg-cover w-full   bg-main h-56 p-10 mt-10 text-center'>
+
+            <h1 className={`text-7xl transition-opacity text-[#082522] duration-1000  font-bold mb-4 ${HeadingVisible ? 'opacity-100' : 'opacity-0'}`}>Our <span  className={`text-orange-500 transition-opacity duration-1000 ${StarterVisible ? 'opacity-100' : 'opacity-0'}`}>Plans</span></h1>
             <h2 className={`text-zinc-500 transition-opacity duration-1000 text-lg mb-8 ${HeadingVisible ? 'opacity-100' : 'opacity-0'}`}>Find the perfect plan for your business!</h2>
+            </div>
             <div className={`mb-4  flex border-2 mt-10 transition-opacity duration-1000 border-zinc-200 py-1 text-sm rounded-3xl px-1 space-x-2 ${HeadingVisible ? 'opacity-100' : 'opacity-0'}`}>
                 <span
                     className={`cursor-pointer h-8 w-20 text-center py-1 px-3 rounded-3xl ${!isAnnual ? 'bg-orange-500 text-white' : 'bg-transparent'}`}
