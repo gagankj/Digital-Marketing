@@ -17,10 +17,11 @@ export default {
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
+      },
+      backgroundImage: {
+        'main': `url(${new URL('./src/assets/main-bg.jpg', import.meta.url).href})`,
+      },
     },
-      backgroundImage:{
-        'main':"url('./src/assets/main-bg.jpg')"
-      }
   },
   plugins: [],
-}}
+}
