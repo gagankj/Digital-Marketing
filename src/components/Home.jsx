@@ -1,7 +1,7 @@
 import React from 'react';
 import {useEffect,useState} from 'react';
 import scroll from '../assets/images/scroll-bar.png'
-
+import logo2 from "../assets/logo2.png"
 const Home = () => {
 
 
@@ -86,10 +86,11 @@ const Home = () => {
     <div className="   custom-cursor h-full pt-10" style={{ backgroundColor: 'white' }}>
       {/* Hero Section */}
       
-    <div className='flex h-auto justify-center'>
+    <div className='flex h-screen justify-center'>
 
-      <section className={`hero w-full pt-28 w-3/4  pl-32 bg-main bg-cover bg-end  text-black transition-opacity duration-1000 ${HeadingVisible ? 'opacity-100' : 'opacity-0'} mt-16 pb-44 bg-cover h-auto`}>
-      <h1 className={`text-9xl text-[#082522] transition-opacity duration-1000 font-bold ${TitleVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <section className={`hero flex justify-between w-full   pl-32 bg-main bg-cover bg-end  text-black transition-opacity duration-1000 ${HeadingVisible ? 'opacity-100' : 'opacity-0'} mt-16 pb-44 bg-cover h-3/4 `}>
+    <div>
+      <h1 className={`text-9xl pt-28 text-[#082522] transition-opacity duration-1000 font-bold ${TitleVisible ? 'opacity-100' : 'opacity-0'}`}>
         Boost your
       </h1>
       <h1 className={`text-9xl text-[#082522] transition-opacity duration-1000 font-bold ${TitleVisible ? 'opacity-100' : 'opacity-0'}`}>
@@ -105,6 +106,10 @@ const Home = () => {
         Contact
       </button>
       
+    </div>
+
+      <img className='w-72  ' src={logo2} alt="" />
+      
     </section>
     
 
@@ -112,13 +117,10 @@ const Home = () => {
     
     </div>
 
-    <div className='flex justify-center' onClick={scrollNext}  >
-
-    <img className='h-14 w-14 hover:cursor-pointer my-14' src={scroll} alt="" />
-    </div>
+    
 
       {/* About Us */}
-      <section id='about' className="about-us pt-40 my-16">
+      <section id='about' className="about-us">
         <h2 className="text-4xl font-bold text-center">About Us</h2>
         <p className="mt-4 text-center text-zinc-700">We are a dedicated marketing agency focused on delivering results through innovative strategies and creative solutions.</p>
       </section>
