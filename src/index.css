@@ -1,0 +1,47 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .bg-repeating-diagonal {
+      background: repeating-linear-gradient(
+          45deg,
+          #92c9b1,
+          #92c9b1 20px,
+          #b3e0d2 20px,
+          #b3e0d2 40px
+      );
+  }
+}
+
+body {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Add this to your CSS file */
+.backdrop-blur-2xl {
+  backdrop-filter: blur(16px); /* or adjust the value as needed */
+}
+
+
+
+
+
+body{
+    font-family: 'Buona Display', sans-serif;
+}
+
+.text-stroke {
+    text-shadow: 
+      -1px -1px 0 #2e2e2e,
+      1px -1px 0 #2e2e2e,
+      -1px 1px 0 #2e2e2e,
+      1px 1px 0 #2e2e2e
+  }
+
+
+  .custom-cursor {
+    cursor: url('./assets/cursors/custom-cursor.png') 50 50, auto; /* Use the correct path to your image */
+  }
+  
