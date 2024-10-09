@@ -9,9 +9,9 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for mobile menu
 
   return (
-    <nav className="fixed w-full h-20 bg-glass backdrop-filter backdrop-blur-2xl p-4 flex justify-between items-center z-10">
+    <nav className="fixed w-full h-20 bg-glass  backdrop-filter backdrop-blur-2xl p-4 flex justify-between items-center z-10">
       {/* Logo */}
-      <img className='h-12 md:h-20' src={logo} alt="Logo" />
+      <img className='h-12  md:h-20' src={logo} alt="Logo" />
 
       {/* Hamburger Icon for mobile view */}
       <div className="md:hidden flex items-center">
@@ -26,7 +26,7 @@ const Navbar = () => {
       </div>
 
       {/* Navigation Links */}
-      <div className={`md:flex md:items-center md:gap-6 space-x-0 flex-col md:flex-row ${isMenuOpen ? 'block' : 'hidden'} md:block`}>
+      <div className={`md:flex pl-24 md:items-center md:gap-6 space-x-0 flex-col md:flex-row ${isMenuOpen ? 'block' : 'hidden'} md:block`}>
         <NavLink
           to="/"
           className={({ isActive }) =>
@@ -79,14 +79,7 @@ const Navbar = () => {
           About
         </NavLink>
 
-        <NavLink
-          to="/pricing"
-          className={({ isActive }) =>
-            `relative hover:text-orange-500 ${isActive ? "text-orange-500" : ""}`
-          }
-        >
-          Pricing
-        </NavLink>
+  
 
         <NavLink
           to="/contact"
@@ -108,10 +101,10 @@ const Navbar = () => {
       </div>
 
       {/* Call Us Button (hidden on mobile, visible on larger screens) */}
-      <div className="hidden md:block">
-        <button className="bg-orange-500 text-white rounded-3xl px-4 py-2 transition duration-500 ease-in-out hover:bg-black hover:text-orange-500">
-          Call Us
-        </button>
+      <div className="hidden  md:block">
+        <NavLink to="/consult"  className="bg-orange-500  text-white rounded-3xl px-4 py-2 transition duration-500 ease-in-out hover:bg-black hover:text-orange-500">
+          Book a Consultation
+        </NavLink>
       </div>
     </nav>
   );

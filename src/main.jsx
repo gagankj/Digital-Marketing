@@ -15,7 +15,7 @@ import Whatsapp from './components/Services/Whatsapp.jsx';
 import Ppc from './components/Services/Ppc.jsx';
 import Seo from './components/Services/Seo.jsx';
 import Pricing from './components/Pricing.jsx';
-
+import Consultation from './components/Consultation.jsx';
 
 
 
@@ -71,6 +71,10 @@ const router = createHashRouter([
       {
         path:'pricing',
         element:<Pricing/>
+      },
+      {
+        path:'consult',
+        element:<Consultation/>
       },
       
       
