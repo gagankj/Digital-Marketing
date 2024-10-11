@@ -1,8 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import logo2 from "../assets/logo2.png";
 import axios from 'axios';
-
+import { NavLink } from 'react-router-dom';
 const Home = () => {
+
+  
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [error, setError] = useState('');
+
+  const handleChange = (e) => {
+    setPhoneNumber(e.target.value);
+    setError(''); // Clear error on input change
+  };
+
+  const handleBlur = () => {
+    if (phoneNumber.length < 10) {
+      setError('Contact number must be exactly 10 digits long.');
+    } else if (!/^\d{10}$/.test(phoneNumber)) {
+      setError('Please enter a valid 10-digit mobile number (digits only).');
+    }
+  };
 
   const [name, setName]=useState("");
   const [hosp, setHosp]=useState('');
@@ -131,13 +148,11 @@ const Home = () => {
             <p className={`mt-4 transition-opacity duration-1000 text-zinc-700 ${TitleVisible ? 'opacity-100' : 'opacity-0'}`}>
               Elevate your brand with our expert marketing solutions.
             </p>
-            <div className="flex flex-col md:flex-row mt-6">
-              <button className={`bg-orange-500 hover:bg-black transition-opacity duration-1000 hover:text-orange-500 text-white px-6 py-3 rounded-3xl shadow ${ButtonVisible ? 'opacity-100' : 'opacity-0'} mb-4 md:mb-0 md:mr-4`}>
+            <div className=" md:flex-row mt-6">
+              <NavLink to="plans" className={`bg-orange-500 hover:bg-black transition-opacity duration-1000 hover:text-orange-500 text-white px-6 py-3 rounded-3xl shadow ${ButtonVisible ? 'opacity-100' : 'opacity-0'} mb-4 md:mb-0 md:mr-4`}>
                 Get Started
-              </button>
-              <button className={`hover:bg-black transition-opacity duration-1000 hover:text-orange-500 bg-orange-500 text-white px-6 py-3 rounded-3xl shadow ${ButtonVisible ? 'opacity-100' : 'opacity-0'}`}>
-                Contact
-              </button>
+              </NavLink>
+              
             </div>
           </div>
           <img className='hidden md:block w-64 md:w-72 mt-6 md:mt-0' src={logo2} alt="Logo" />
@@ -151,19 +166,22 @@ const Home = () => {
       </section>
 
       {/* Services */}
-      <section className="services my-16">
+      <section className="services px-12 my-16">
         <h2 className="text-4xl md:text-6xl font-bold text-center">Our Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-          <div className="service bg-white p-6 rounded-lg shadow">
-            <h3 className="text-xl font-bold">SEO</h3>
+          <div className="service bg-zinc-200 p-4 rounded-lg shadow">
+            <img className='rounded-xl' src="https://img.freepik.com/premium-photo/notebook-with-tools-notes-about-seo_132358-3279.jpg?ga=GA1.1.1338253950.1728447138&semt=ais_hybrid" alt="" />
+            <h3 className="text-2xl mt-12 font-bold">SEO</h3>
             <p className='text-zinc-700'>Optimize your website to rank higher in search engine results.</p>
           </div>
-          <div className="service bg-white p-6 rounded-lg shadow">
-            <h3 className="text-xl font-bold">Content Marketing</h3>
+          <div className="service bg-zinc-200 p-4 rounded-lg shadow">
+            <img className='rounded-xl' src="https://img.freepik.com/free-photo/media-marketing-internet-digital-global_53876-138500.jpg?ga=GA1.1.1338253950.1728447138&semt=ais_hybrid" alt="" />
+            <h3 className="text-2xl mt-12 font-bold">Content Marketing</h3>
             <p className='text-zinc-700'>Create valuable content to attract and engage your audience.</p>
           </div>
-          <div className="service bg-white p-6 rounded-lg shadow">
-            <h3 className="text-xl font-bold">Social Media Management</h3>
+          <div className="service bg-zinc-200 p-4 rounded-lg shadow">
+            <img className='rounded-xl' src="https://img.freepik.com/free-photo/hands-holding-smartphone-social-media-concept_23-2150208239.jpg?ga=GA1.1.1338253950.1728447138&semt=ais_hybrid" alt="" />
+            <h3 className="text-2xl mt-12 font-bold">Social Media Management</h3>
             <p className='text-zinc-700'>Manage your online presence across various platforms.</p>
           </div>
         </div>
@@ -172,44 +190,44 @@ const Home = () => {
       
 
       {/* Portfolio */}
-      <section className="portfolio my-16">
+      <section className="portfolio px-12 my-16">
         <h2 className="text-4xl md:text-6xl font-bold text-center">Portfolio</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-          <div className="project bg-white p-6 rounded-lg shadow">
-            <img src="https://via.placeholder.com/300" alt="Project 1" className="mb-4 w-full h-auto"/>
+          <div className="project bg-gray-300 p-6 rounded-xl shadow">
+            <img  src="https://img.freepik.com/premium-vector/gradient-abstract-background-landing-page-websites_213860-2015.jpg?ga=GA1.1.1338253950.1728447138&semt=ais_hybrid" alt="Project 1" className="mb-4 rounded-xl w-full h-auto"/>
             <h3 className="text-xl font-bold">Project 1</h3>
           </div>
-          <div className="project bg-white p-6 rounded-lg shadow">
-            <img src="https://via.placeholder.com/300" alt="Project 2" className="mb-4 w-full h-auto"/>
+          <div className="project bg-gray-300 p-6 rounded-lg shadow">
+            <img  src="https://img.freepik.com/premium-vector/website-business-web-template-illustration-landing-background-page-vector-concept-layout_536870-790.jpg?ga=GA1.1.1338253950.1728447138&semt=ais_hybrid " alt="Project 2" className="mb-4 rounded-xl w-full h-auto"/>
             <h3 className="text-xl font-bold">Project 2</h3>
           </div>
-          <div className="project bg-white p-6 rounded-lg shadow">
-            <img src="https://via.placeholder.com/300" alt="Project 3" className="mb-4 w-full h-auto"/>
+          <div className="project bg-gray-300 p-6 rounded-lg shadow">
+            <img  src="https://img.freepik.com/free-vector/landing-page-abstract-design-template-website-app-colorful-abstract-minimal-wave_1217-4796.jpg?ga=GA1.1.1338253950.1728447138&semt=ais_hybrid" alt="Project 3" className="mb-4 rounded-xl w-full h-auto"/>
             <h3 className="text-xl font-bold">Project 3</h3>
           </div>
-          <div className="project bg-white p-6 rounded-lg shadow">
-            <img src="https://via.placeholder.com/300" alt="Project 4" className="mb-4 w-full h-auto"/>
+          <div className="project bg-gray-300 p-6 rounded-lg shadow">
+            <img  src="https://img.freepik.com/premium-vector/website-business-web-template-illustration-landing-background-page-vector-concept-layout_536870-794.jpg?ga=GA1.1.1338253950.1728447138&semt=ais_hybrid" alt="Project 4" className="mb-4 rounded-xl w-full h-auto"/>
             <h3 className="text-xl font-bold">Project 4</h3>
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="testimonials my-16">
+      <section className="testimonials text-center my-16">
         <h2 className="text-4xl md:text-6xl font-bold text-center">Testimonials</h2>
-        <div className="mt-8 flex overflow-x-auto">
-          <div className="testimonial w-64 bg-white p-6 rounded-lg shadow mx-2">
-            <img src="https://via.placeholder.com/100" alt="Client 1" className="rounded-full mb-4"/>
+        <div className="mt-8 flex justify-center overflow-x-auto">
+          <div className="testimonial flex flex-col items-center w-64 bg-orange-100 p-6 rounded-xl shadow mx-2">
+            <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?ga=GA1.1.1338253950.1728447138&semt=ais_hybrid" alt="Client 1" className="rounded-full h-12 mb-4"/>
             <p>"Amazing service! Highly recommend!"</p>
             <h4 className="font-bold mt-2">- Client 1</h4>
           </div>
-          <div className="testimonial w-64 bg-white p-6 rounded-lg shadow mx-2">
-            <img src="https://via.placeholder.com/100" alt="Client 2" className="rounded-full mb-4"/>
+          <div className="testimonial flex flex-col items-center w-64 bg-orange-100 p-6 rounded-lg shadow mx-2">
+            <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?ga=GA1.1.1338253950.1728447138&semt=ais_hybrid" alt="Client 2" className="rounded-full h-12 mb-4"/>
             <p>"They helped us grow our brand exponentially."</p>
             <h4 className="font-bold mt-2">- Client 2</h4>
           </div>
-          <div className="testimonial w-64 bg-white p-6 rounded-lg shadow mx-2">
-            <img src="https://via.placeholder.com/100" alt="Client 3" className="rounded-full mb-4"/>
+          <div className="testimonial flex flex-col items-center w-64 bg-orange-100 p-6 rounded-lg shadow mx-2">
+            <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?ga=GA1.1.1338253950.1728447138&semt=ais_hybrid" alt="Client 3" className="rounded-full h-12 mb-4"/>
             <p>"Fantastic experience working with this team!"</p>
             <h4 className="font-bold mt-2">- Client 3</h4>
           </div>
@@ -219,7 +237,7 @@ const Home = () => {
       
 
       {/* Contact Info */}
-      <div className="container mx-auto mt-10 p-6 bg-zinc-300 rounded-lg shadow-lg max-w-lg">
+      <div className="container mx-auto mt-10 p-6 mb-20 bg-zinc-200 rounded-lg shadow-lg max-w-lg">
   <h1 className="text-4xl font-bold text-center mb-6">Book a <span className='text-orange-500 text-5xl'>FREE</span> Consultation Now!! </h1>
   <form autoComplete="off" className="space-y-4" onSubmit={handleSubmit}>
     
@@ -248,15 +266,19 @@ const Home = () => {
     </div>
 
     <div>
-      <label className="block text-md font-semibold text-zinc-800">Contact</label>
+      <label className="block text-md font-semibold text-zinc-800">Phone Number</label>
       <input
-        type="text"
-        className="mt-1 block w-full py-2 px-2 border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500"
+        type="tel"
+        className={`mt-1 block w-full py-2 px-2 border rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 ${
+          error ? 'border-red-500' : 'border-gray-300'
+        }`}
         required
-        placeholder="Enter your Contact"
-        onChange={(e) => setContact(e.target.value)}
-        value={contact}
+        placeholder="Enter your Phone Number"
+        onChange={handleChange}
+        onBlur={handleBlur}
+        value={phoneNumber}
       />
+      {error && <div className="mt-1 text-sm text-red-500">{error}</div>}
     </div>
 
     <div>
@@ -274,7 +296,7 @@ const Home = () => {
     <div>
       <label className="block text-md font-semibold text-zinc-800">Time</label>
       <input
-        type="text"
+        type="time"
         className="mt-1 block w-full py-2 px-2 border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500"
         required
         placeholder="When should we call you?"
@@ -284,17 +306,13 @@ const Home = () => {
     </div>
 
     <div className="text-center">
-      <button type="submit" className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">Submit</button>
+      <button type="submit" className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">Schedule</button>
     </div>
   </form>
 </div>
 
 
-      {/* Call-to-Action */}
-      <section className="call-to-action bg-[#16423C] text-white py-10 mb-32 mt-16 text-center">
-        <h2 className="text-3xl font-bold">Ready to elevate your business?</h2>
-        <button className="mt-4 bg-white text-[#16423C] px-6 py-3 rounded-3xl shadow">Schedule a Consultation</button>
-      </section>
+      
     </div>
   );
 };

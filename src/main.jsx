@@ -16,8 +16,8 @@ import Ppc from './components/Services/Ppc.jsx';
 import Seo from './components/Services/Seo.jsx';
 import Pricing from './components/Pricing.jsx';
 import Consultation from './components/Consultation.jsx';
-
-
+import Plans from './components/Plans.jsx';
+import Price from './components/Price.jsx';
 
 const router = createHashRouter([
   {
@@ -75,6 +75,14 @@ const router = createHashRouter([
       {
         path:'consult',
         element:<Consultation/>
+      },
+      {
+        path:'plans',
+        element:<Plans/>
+      },
+      {
+        path:'price',
+        element:<Price/>
       },
       
       

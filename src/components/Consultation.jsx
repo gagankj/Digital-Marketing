@@ -3,7 +3,23 @@ import axios from 'axios';
 
 const Consultation = () => {
 
-    const [name, setName]=useState("");
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [error, setError] = useState('');
+
+  const handleChange = (e) => {
+    setPhoneNumber(e.target.value);
+    setError(''); // Clear error on input change
+  };
+
+  const handleBlur = () => {
+    if (phoneNumber.length < 10) {
+      setError('Contact number must be exactly 10 digits long.');
+    } else if (!/^\d{10}$/.test(phoneNumber)) {
+      setError('Please enter a valid 10-digit mobile number (digits only).');
+    }
+  };
+
+  const [name, setName]=useState("");
   const [hosp, setHosp]=useState('');
   const [contact, setContact]=useState('');
   const [address, setAddress]=useState('');
@@ -35,9 +51,10 @@ const Consultation = () => {
     })
   }
 
+
     return (
         <div className='h-screen pt-32'>
-            <div className="container mx-auto p-6  bg-zinc-300 rounded-lg shadow-lg max-w-lg">
+            <div className="container mx-auto p-6  bg-zinc-200 rounded-lg shadow-lg max-w-lg">
   <h1 className="text-4xl font-bold text-center mb-6">Book a <span className='text-orange-500 text-5xl'>FREE</span> Consultation Now!! </h1>
   <form autoComplete="off" className="space-y-4" onSubmit={handleSubmit}>
     
@@ -66,15 +83,19 @@ const Consultation = () => {
     </div>
 
     <div>
-      <label className="block text-md font-semibold text-zinc-800">Contact</label>
+      <label className="block text-md font-semibold text-zinc-800">Phone Number</label>
       <input
         type="tel"
-        className="mt-1 block w-full py-2 px-2 border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500"
+        className={`mt-1 block w-full py-2 px-2 border rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 ${
+          error ? 'border-red-500' : 'border-gray-300'
+        }`}
         required
-        placeholder="Enter your Contact"
-        onChange={(e) => setContact(e.target.value)}
-        value={contact}
-        />
+        placeholder="Enter your Phone Number"
+        onChange={handleChange}
+        onBlur={handleBlur}
+        value={phoneNumber}
+      />
+      {error && <div className="mt-1 text-sm text-red-500">{error}</div>}
     </div>
 
     <div>
@@ -92,7 +113,7 @@ const Consultation = () => {
     <div>
       <label className="block text-md font-semibold text-zinc-800">Time</label>
       <input
-        type="text"
+        type="time"
         className="mt-1 block w-full py-2 px-2 border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500"
         
         placeholder="When should we call you?"

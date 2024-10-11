@@ -57,14 +57,7 @@ const Footer = () => {
           >
             About
           </NavLink>
-          <NavLink
-            to="/pricing"
-            className={({ isActive }) =>
-              `relative hover:text-orange-500 ${isActive ? "text-orange-500" : ""}`
-            }
-          >
-            Pricing
-          </NavLink>
+          
           <NavLink
             to="/contact"
             className={({ isActive }) =>

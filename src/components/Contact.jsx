@@ -30,8 +30,8 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4">
-      <div>
+    <div className="min-h-screen pl-20 bg-contact bg-cover flex flex-col items-start justify-center px-4">
+    
         <h1 className={`text-4xl md:text-7xl font-bold text-black mb-6 transition-opacity duration-1000 ${headingVisible ? 'opacity-100' : 'opacity-0'}`}>
           Contact <span className='text-orange-500'>Us 📞</span>
         </h1>
@@ -60,7 +60,7 @@ const Contact = () => {
             <img src={instagram} alt="Instagram" className="w-6 h-6 md:w-8 md:h-8" />
           </a>
         </div>
-      </div>
+      
     </div>
   );
 };

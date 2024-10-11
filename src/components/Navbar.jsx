@@ -37,7 +37,11 @@ const Navbar = () => {
         </NavLink>
 
         {/* Services Link */}
-        <div className="relative md:block">
+        <div 
+          className="relative md:block" 
+          onMouseEnter={() => setIsServicesOpen(true)}
+          onMouseLeave={() => setIsServicesOpen(false)}
+        >
           <NavLink
             to="/services"
             className={({ isActive }) =>
@@ -79,8 +83,6 @@ const Navbar = () => {
           About
         </NavLink>
 
-  
-
         <NavLink
           to="/contact"
           className={({ isActive }) =>
@@ -102,7 +104,7 @@ const Navbar = () => {
 
       {/* Call Us Button (hidden on mobile, visible on larger screens) */}
       <div className="hidden  md:block">
-        <NavLink to="/consult"  className="bg-orange-500  text-white rounded-3xl px-4 py-2 transition duration-500 ease-in-out hover:bg-black hover:text-orange-500">
+        <NavLink to="/consult" className="bg-orange-500 text-white rounded-3xl px-4 py-2 transition duration-500 ease-in-out hover:bg-black hover:text-orange-500">
           Book a Consultation
         </NavLink>
       </div>

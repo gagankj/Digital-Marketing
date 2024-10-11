@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class', // Enable class-based dark mode
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -20,10 +21,13 @@ export default {
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
+      },
+      backgroundImage: {
+        'main': "url('/main-bg.jpg')",
+        'plans': "url('/plans-bg.jpg')",
+        'contact':"url('/contact.jpg')"
+      },
     },
-      backgroundImage:{
-        'main':"url('/main-bg.jpg')",
-      }
   },
   plugins: [],
-}}
+}
