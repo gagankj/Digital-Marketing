@@ -194,19 +194,19 @@ const Home = () => {
         <h2 className="text-4xl md:text-6xl font-bold text-center">Portfolio</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
           <div className="project bg-gray-300 p-6 rounded-xl shadow">
-            <img  src="https://img.freepik.com/premium-vector/gradient-abstract-background-landing-page-websites_213860-2015.jpg?ga=GA1.1.1338253950.1728447138&semt=ais_hybrid" alt="Project 1" className="mb-4 rounded-xl w-full h-auto"/>
+            <img  src="https://img.freepik.com/free-vector/gradient-medical-landing-page_52683-72212.jpg?ga=GA1.1.543076348.1727783892&semt=ais_hybrid-rr-similar" alt="Project 1" className="mb-4 rounded-xl w-full h-auto"/>
             <h3 className="text-xl font-bold">Project 1</h3>
           </div>
           <div className="project bg-gray-300 p-6 rounded-lg shadow">
-            <img  src="https://img.freepik.com/premium-vector/website-business-web-template-illustration-landing-background-page-vector-concept-layout_536870-790.jpg?ga=GA1.1.1338253950.1728447138&semt=ais_hybrid " alt="Project 2" className="mb-4 rounded-xl w-full h-auto"/>
+            <img  src="https://img.freepik.com/free-vector/gradient-medical-landing-page_23-2149055585.jpg?ga=GA1.1.543076348.1727783892&semt=ais_hybrid-rr-similar" alt="Project 2" className="mb-4 rounded-xl w-full h-auto"/>
             <h3 className="text-xl font-bold">Project 2</h3>
           </div>
           <div className="project bg-gray-300 p-6 rounded-lg shadow">
-            <img  src="https://img.freepik.com/free-vector/landing-page-abstract-design-template-website-app-colorful-abstract-minimal-wave_1217-4796.jpg?ga=GA1.1.1338253950.1728447138&semt=ais_hybrid" alt="Project 3" className="mb-4 rounded-xl w-full h-auto"/>
+            <img  src="https://img.freepik.com/free-vector/hand-drawn-hospital-template_23-2150400471.jpg?ga=GA1.1.543076348.1727783892&semt=ais_hybrid-rr-similar" alt="Project 3" className="mb-4 rounded-xl w-full h-auto"/>
             <h3 className="text-xl font-bold">Project 3</h3>
           </div>
           <div className="project bg-gray-300 p-6 rounded-lg shadow">
-            <img  src="https://img.freepik.com/premium-vector/website-business-web-template-illustration-landing-background-page-vector-concept-layout_536870-794.jpg?ga=GA1.1.1338253950.1728447138&semt=ais_hybrid" alt="Project 4" className="mb-4 rounded-xl w-full h-auto"/>
+            <img  src="https://img.freepik.com/free-vector/gradient-ophthalmologist-landing-page_23-2149346821.jpg?ga=GA1.1.543076348.1727783892&semt=ais_hybrid-rr-similar" alt="Project 4" className="mb-4 rounded-xl w-full h-auto"/>
             <h3 className="text-xl font-bold">Project 4</h3>
           </div>
         </div>

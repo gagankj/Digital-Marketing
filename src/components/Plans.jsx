@@ -28,13 +28,13 @@ const cardData = [
     link: "/medicines"
   },
   {
-    title: "Healthy Food & Supplements",
+    title: "Healthy Foods",
     description: " Lorem ipsum dolor sit amet consectetur adipisicing elit",
-    imageUrl: "https://img.freepik.com/free-photo/top-view-delicious-pie-slices-with-candies-fresh-tangerines-dark-background-fruit-cake-sweet-biscuit-pie_140725-96654.jpg?ga=GA1.1.1338253950.1728447138&semt=ais_hybrid",
+    imageUrl: "https://img.freepik.com/free-photo/immunity-boosting-foods-healthy-balanced-lifestyle_23-2149211596.jpg?ga=GA1.1.543076348.1727783892&semt=ais_hybrid-rr-similar",
     link: "/healthy-food"
   },
   {
-    title: "Medicated Products & Equipment",
+    title: "Medicated Products & Supplements",
     description: " Lorem ipsum dolor sit amet consectetur adipisicing elit",
     imageUrl: "https://img.freepik.com/free-photo/plant-cotton-swabs-near-cosmetics-bottles_23-2147787956.jpg?ga=GA1.1.1338253950.1728447138&semt=ais_hybrid",
     link: "/sanitary-products"
@@ -45,6 +45,14 @@ const cardData = [
     imageUrl: "https://img.freepik.com/premium-photo/young-women-men-yoga-class-stretching-balance-exercises-hero-pose-relaxation-healthy-lifestyle-fitness-club-copy-spae_116547-3744.jpg?ga=GA1.1.1338253950.1728447138&semt=ais_hybrid",
     link: "/exercises"
   },
+  
+  {
+    title: "Equipments",
+    description: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, omnis! Tem",
+    imageUrl: "https://img.freepik.com/premium-photo/room-with-hospital-hospital-chair_1197721-65863.jpg?ga=GA1.1.543076348.1727783892&semt=ais_hybrid-rr-similar",
+    link: "/exercises"
+  },
+
 ];
 
 const Card = ({ title, description, imageUrl, link }) => {
@@ -64,22 +72,16 @@ const Card = ({ title, description, imageUrl, link }) => {
 
 const Plans = () => {
   return (
-    <div className="bg-plans bg-cover bg-center min-h-screen text-start pb-44 pt-32 rounded-lg shadow-md transition duration-300 ease-in-out">
+    <div className=" min-h-screen text-start pb-44 pt-32 rounded-lg shadow-md transition duration-300 ease-in-out">
       <h1 className="text-5xl font-bold text-center mb-12">CHOOSE YOUR <span className='text-orange-500'>SERVICE</span></h1>
-      <ul className="grid grid-cols-4 justify-items-center gap-10">
-        {cardData.slice(0, 4).map((card, index) => (
+      <ul className="grid bg-plans bg-cover bg-center pt-10 grid-cols-4 justify-items-center gap-10">
+        {cardData.slice(0, 8).map((card, index) => (
           <li key={index}>
             <Card {...card} />
           </li>
         ))}
       </ul>
-      <ul className="grid grid-cols-3 justify-items-center  mt-10">
-        {cardData.slice(4).map((card, index) => (
-          <li key={index + 4}>
-            <Card {...card} />
-          </li>
-        ))}
-      </ul>
+      
     </div>
   );
 };
