@@ -21,7 +21,7 @@ const Consultation = () => {
 
   const [name, setName]=useState("");
   const [hosp, setHosp]=useState('');
-  const [contact, setContact]=useState('');
+  // const [contact, setContact]=useState('');
   const [address, setAddress]=useState('');
   const [time, setTime]=useState('');
 
@@ -37,7 +37,7 @@ const Consultation = () => {
     const data = {
       Name:name,
       Hospital:hosp,
-      Contact:contact,
+      Contact:phoneNumber,
       Address:address,
       Time:time
     }
@@ -45,7 +45,7 @@ const Consultation = () => {
       
       setName('');
       setHosp('');
-      setContact('');
+      setPhoneNumber('');
       setAddress('');
       setTime('');
     })
